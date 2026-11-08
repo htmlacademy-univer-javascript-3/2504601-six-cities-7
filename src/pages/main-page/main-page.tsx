@@ -105,7 +105,7 @@ function MainPage({offers, city}: MainPageProps) {
               </div>
             </section>
             <div className="cities__right-section">
-              <Map city={city} offers={cityOffers} />
+              <Map className="cities__map" city={city} offers={cityOffers} />
             </div>
           </div>
         </div>
