@@ -1,7 +1,7 @@
 import type {JSX} from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {AppRoute, AuthorizationStatus} from '../../const';
-import {Offer} from '../../types/offer';
+import {City, Offer} from '../../types/offer';
 import PrivateRoute from '../private-route/private-route';
 import MainPage from '../../pages/main-page/main-page';
 import LoginPage from '../../pages/login-page/login-page';
@@ -11,15 +11,16 @@ import NotFoundPage from '../../pages/not-found-page/not-found-page';
 
 type AppProps = {
   offers: Offer[];
+  city: City;
 };
 
-function App({offers}: AppProps): JSX.Element {
+function App({offers, city}: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<MainPage offers={offers} />}
+          element={<MainPage offers={offers} city={city} />}
         />
         <Route
           path={AppRoute.Login}
