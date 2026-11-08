@@ -1,13 +1,17 @@
 import {Link} from 'react-router-dom';
 import {AppRoute} from '../../const';
-import {Offer} from '../../types/offer';
+import {City, Offer} from '../../types/offer';
 import OfferList from '../../components/offer-list/offer-list';
+import Map from '../../components/map/map';
 
 type MainPageProps = {
   offers: Offer[];
+  city: City;
 };
 
-function MainPage({offers}: MainPageProps) {
+function MainPage({offers, city}: MainPageProps) {
+  const cityOffers = offers.filter((offer) => offer.city.name === city.name);
+
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -80,7 +84,7 @@ function MainPage({offers}: MainPageProps) {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{offers.length} places to stay in Amsterdam</b>
+              <b className="places__found">{offers.length} places to stay in {city.name}</b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
@@ -97,11 +101,11 @@ function MainPage({offers}: MainPageProps) {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <OfferList offers={offers} cardType="cities" />
+                <OfferList offers={cityOffers} cardType="cities" />
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map city={city} offers={cityOffers} />
             </div>
           </div>
         </div>

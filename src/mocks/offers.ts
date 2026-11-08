@@ -1,4 +1,5 @@
 import {Offer} from '../types/offer';
+import {AMSTERDAM} from './cities';
 
 export const offers: Offer[] = [
   {
@@ -9,7 +10,8 @@ export const offers: Offer[] = [
     rating: 4.6,
     isPremium: true,
     isFavorite: false,
-    city: 'Amsterdam',
+    city: AMSTERDAM,
+    location: {latitude: 52.3909553943508, longitude: 4.85309666406198, zoom: 16},
     previewImage: 'img/apartment-01.jpg',
     images: ['img/apartment-01.jpg', 'img/room.jpg', 'img/apartment-02.jpg', 'img/apartment-03.jpg', 'img/studio-01.jpg'],
     bedrooms: 2,
@@ -29,7 +31,8 @@ export const offers: Offer[] = [
     rating: 4.0,
     isPremium: false,
     isFavorite: true,
-    city: 'Amsterdam',
+    city: AMSTERDAM,
+    location: {latitude: 52.3609553943508, longitude: 4.85309666406198, zoom: 16},
     previewImage: 'img/room.jpg',
     images: ['img/room.jpg', 'img/apartment-01.jpg', 'img/apartment-02.jpg', 'img/studio-01.jpg'],
     bedrooms: 1,
@@ -48,7 +51,8 @@ export const offers: Offer[] = [
     rating: 4.9,
     isPremium: false,
     isFavorite: false,
-    city: 'Amsterdam',
+    city: AMSTERDAM,
+    location: {latitude: 52.3909553943508, longitude: 4.929309666406198, zoom: 16},
     previewImage: 'img/apartment-02.jpg',
     images: ['img/apartment-02.jpg', 'img/apartment-03.jpg', 'img/room.jpg', 'img/apartment-01.jpg'],
     bedrooms: 3,
@@ -68,7 +72,8 @@ export const offers: Offer[] = [
     rating: 4.4,
     isPremium: true,
     isFavorite: true,
-    city: 'Amsterdam',
+    city: AMSTERDAM,
+    location: {latitude: 52.3809553943508, longitude: 4.939309666406198, zoom: 16},
     previewImage: 'img/apartment-03.jpg',
     images: ['img/apartment-03.jpg', 'img/apartment-01.jpg', 'img/studio-01.jpg', 'img/room.jpg', 'img/apartment-02.jpg'],
     bedrooms: 1,

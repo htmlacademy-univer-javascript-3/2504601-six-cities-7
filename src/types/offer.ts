@@ -12,7 +12,8 @@ export type Offer = {
   rating: number;
   isPremium: boolean;
   isFavorite: boolean;
-  city: string;
+  city: City;
+  location: Location;
   previewImage: string;
   images: string[];
   bedrooms: number;
@@ -23,3 +24,14 @@ export type Offer = {
 };
 
 export type PlaceCardType = 'cities' | 'near-places' | 'favorites';
+
+export type Location = {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+};
+
+export type City = {
+  name: string;
+  location: Location;
+};
