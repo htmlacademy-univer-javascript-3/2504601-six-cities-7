@@ -8,8 +8,7 @@ type OfferListProps = {
 };
 
 function OfferList({offers, cardType}: OfferListProps): JSX.Element {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [activeOfferId, setActiveOfferId] = useState<string | null>(null);
+  const [, setActiveOfferId] = useState<string | null>(null);
 
   return (
     <>
