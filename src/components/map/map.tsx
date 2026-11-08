@@ -6,6 +6,7 @@ import {URL_MARKER_DEFAULT} from '../../const';
 import {City, Offer} from '../../types/offer';
 
 type MapProps = {
+  className: string;
   city: City;
   offers: Offer[];
 };
@@ -16,7 +17,7 @@ const defaultCustomIcon = new Icon({
   iconAnchor: [13.5, 39],
 });
 
-function Map({city, offers}: MapProps): JSX.Element {
+function Map({className, city, offers}: MapProps): JSX.Element {
   const mapRef = useRef<HTMLElement | null>(null);
   const map = useMap(mapRef, city);
 
@@ -39,7 +40,7 @@ function Map({city, offers}: MapProps): JSX.Element {
     }
   }, [map, offers]);
 
-  return <section className="cities__map map" ref={mapRef}></section>;
+  return <section className={`${className} map`} ref={mapRef}></section>;
 }
 
 export default Map;
